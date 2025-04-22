@@ -9,3 +9,6 @@
 *.vsidx
 *.json
 /study/4_cotehap/ch11_그래프/.vs
+/study/4_cotehap/ch11_그래프/ch11_그래프
+*.exe
+*.pdb

@@ -1,26 +1,25 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0); cin.tie(0);
-	//freopen_s(new FILE*,"input.txt","r",stdin);
-	
-	int arr[8];
-	for(int i = 0; i < 8; i++) {
-		cin >> arr[i];
-	}
+    ios::sync_with_stdio(0); cin.tie(0);
+    
+    int tmp;
+    bool asc = 1, des = 1;
+    
+    for (int i = 0; i < 8; ++i) {
+        cin >> tmp;
+        if (asc && (i + 1) != tmp) asc = false;
+        if (des && (8 - i) != tmp) des = false;
+        
+        if (!asc && !des) {
+            cout << "mixed";
+            return 0;
+        }
+    }
+    
+    if (asc) cout << "ascending";
+    else cout << "descending";
 
-	bool ascending = true,descending = true;
-
-	for(int i = 0; i < 7; i++) {
-		if(arr[i] > arr[i + 1]) ascending = false;
-		if(arr[i] < arr[i + 1]) descending = false;
-	}
-
-	if(ascending) cout << "ascending";
-	else if(descending) cout << "descending";
-	else cout << "mixed";
-
-	return 0;
+    return 0;
 }

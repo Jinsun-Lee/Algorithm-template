@@ -1,10 +1,12 @@
 ﻿#include <iostream>
+#include <iterator>
 #include <vector>
 #include <unordered_map> // 사전순으로 탐색할 때 편하게
 #include <unordered_set>
-#include <stack>
-#include <algorithm>
-#include <iterator>
+
+//#include <stack>
+//#include <algorithm>
+
 using namespace std;
 
 unordered_map<char, vector<char>> adjList;
@@ -13,6 +15,7 @@ unordered_set<char> visited;
 vector<char> result;
 
 void dfs(char start) {
+    /*
     stack<char> st;
     st.push(start);
 
@@ -37,8 +40,19 @@ void dfs(char start) {
                 }
             }
         } // if문 끝
-
     }
+    */
+
+    result.push_back(start);
+    visited.insert(start);
+    
+    // 현재 start 노드와 인접한 노드 중, 방문하지 않은 노드들 탐색
+    for (char neighbor : adjList[start]) {
+        if (visited.find(neighbor) == visited.end()) {
+            dfs(neighbor);
+        }
+    }
+
 }
 
 vector<char> solution(vector<pair<char, char>> graph, char start) {

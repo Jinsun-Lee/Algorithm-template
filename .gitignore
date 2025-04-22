@@ -7,3 +7,5 @@
 *.sln
 *.db-wal
 *.vsidx
+*.json
+/study/4_cotehap/ch11_그래프/.vs

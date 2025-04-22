@@ -1,4 +1,8 @@
 ﻿# [1주차. DFS](https://cafe.naver.com/dremdeveloper/1364)
+- 시작 노드 → 최대 깊이 노드까지 차례대로 방문
+- 최대 깊이까지 방문 후, 백트래킹(443p 그림)
+
+<br>
 
 ### 1. DFS를 구현하는 대표적인 두 가지 방법은 재귀 호출을 이용하는 것과 명시적인 스택(Stack) 자료구조를 사용하는 것입니다. 각 구현 방식의 장단점을 비교 설명해주세요
 ```
@@ -10,6 +14,8 @@
 장: 직관적 구현
 단: 비효율적
 ```
+재귀함수를 호출하면 호출한 함수가 시스템 스택에 쌓임  
+= 스택처럼 쓸 수 있음
 
 <br>
 
@@ -27,6 +33,7 @@
 ```
 시작 노드를 push
 스택에서 노드를 pop
+(스택에 있는 노드 = 아직 방문x, 방문 예정)
 
 pop한 노드의 방문 확인
 방문하지 않았다면 방문 처리
@@ -39,8 +46,11 @@ pop한 노드의 방문 확인
 
 스택에서 노드를 pop하면
 최근에 스택에 push한 노드
-탐색할 노드가 없을 때까지 계속 확인하고
-인접한 노드 중 방문할 push하지 않을 뿐임
+
+탐색할 노드가 없을 때까지 계속 확인
+스택이 비어있는지 확인
+스택이 비었음 = 모두 방문 → 탐색 종료
+
 이 과정에서 스택이 LIFO이기 때문에 깊게 탐색됨
 ```
 ```
@@ -56,7 +66,11 @@ dfs(인접한노드)가 종료되면, dfs(1)이 종료되기 때문에 스택의
 ---
 
 ### 풀어볼 문제 https://github.com/Jinsun-Lee/CT_Cotehap/issues/6
-- [몸풀기 36번](https://github.com/Jinsun-Lee/CT_Cotehap/blob/master/Chapter11/36.cpp)
-- [네트워크](https://github.com/Jinsun-Lee/CT_Cotehap/blob/master/Chapter11/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC.cpp)
-- [양과 늑대](https://github.com/Jinsun-Lee/CT_Cotehap/blob/master/Chapter11/%EC%96%91%EA%B3%BC%20%EB%8A%91%EB%8C%80.cpp)
-- []()
+- [몸풀기 36번](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/4_cotehap/ch11_%EA%B7%B8%EB%9E%98%ED%94%84/36.cpp)
+- [몸풀기 37번]()
+- [몸풀기 38번]()
+- [몸풀기 39번]()
+- [네트워크]()
+- [양과 늑대]()
+- [양궁대회]()
+- [전력망을 둘로 나누기]()

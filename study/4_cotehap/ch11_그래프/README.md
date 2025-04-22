@@ -65,12 +65,19 @@ dfs(인접한노드)가 종료되면, dfs(1)이 종료되기 때문에 스택의
 
 ---
 
-### 풀어볼 문제 https://github.com/Jinsun-Lee/CT_Cotehap/issues/6
-- [몸풀기 36번](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/4_cotehap/ch11_%EA%B7%B8%EB%9E%98%ED%94%84/36.cpp)
-- [몸풀기 37번]()
-- [몸풀기 38번]()
-- [몸풀기 39번]()
-- [네트워크]()
-- [양과 늑대]()
-- [양궁대회]()
-- [전력망을 둘로 나누기]()
+### [풀어볼 문제](https://github.com/Jinsun-Lee/Algorithm-template/discussions/25) 
+- [ ] DFS 몸풀기 36번 [코드](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/4_cotehap/ch11_%EA%B7%B8%EB%9E%98%ED%94%84/36.cpp) | [리뷰](https://github.com/Jinsun-Lee/Algorithm-template/discussions/14)
+- [ ] 네트워크 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
+- [ ] 양과 늑대 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
+- [ ] 양궁 대회 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/92342)
+---
+- [ ] BFS 몸풀기 37번 [코드](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/4_cotehap/ch11_%EA%B7%B8%EB%9E%98%ED%94%84/37.cpp) | [리뷰](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13)
+- [ ] 게임 맵 최단거리 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/1844)
+- [ ] 경주로 건설 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
+---
+- [ ] [인접리스트 구현](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/4_cotehap/ch11_%EA%B7%B8%EB%9E%98%ED%94%84/436_%EC%9D%B8%EC%A0%91%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EA%B5%AC%ED%98%84.cpp)
+- [ ] 몸풀기 38번 [문제](https://github.com/dremdeveloper/codingtest_cpp/blob/main/solution/38.cpp) 
+- [ ] 몸풀기 39번 [문제](https://github.com/dremdeveloper/codingtest_cpp/blob/main/solution/39.cpp) 
+- [ ] 미로탈출 [문제]() 
+- [ ] 배달 [문제]() 
+- [ ] 전력망을 둘로 나누기 [문제](https://school.programmers.co.kr/learn/courses/30/lessons/86971)

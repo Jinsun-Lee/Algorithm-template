@@ -19,6 +19,7 @@ void dragon(int x, int y, int d, int g) {
         // ⭐ 반시계 방향으로 추가가 됨=현재방향+1이랑 같음
         for (int i = mov.size() - 1; i >= 0; i--) { 
             // 반시계 회전... 아는데 편해서 (mov[i] + 1) % 4
+            dir = mov[i] + 1; 
             if (dir > 3) dir = 0;
             mov.push_back(dir);
         }

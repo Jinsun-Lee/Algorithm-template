@@ -3,11 +3,11 @@
 |출처|제목|유형|풀이|
 |---|---|---|---|
 |17|[조삼모사 ![Silver2][s2]](https://www.codetree.ai/ko/frequent-problems/problems/three-at-dawn-and-four-at-dusk/description)|Backtracking|[250421](https://github.com/Jinsun-Lee/private_algorithm/issues/99)|
-||[]()||[]()|
-||[]()||[]()|
-||[]()||[]()|
-||[]()||[]()|
-||[]()||[]()|
+|17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking|[250422](https://github.com/Jinsun-Lee/private_algorithm/issues/101)|
+|| ||[]()|
+|| ||[]()|
+|| ||[]()|
+|| ||[]()|
 
 
 

@@ -1,12 +1,12 @@
-### [큰돌]()
-- [ ] 1주차. 시간복잡도, 빅오표기법, 공간복잡도, 누적합, 구현
-- [ ] 2주차. 그래프이론, 인접행렬, 인접리스트, DFS, BFS, 트리순회
-- [ ] 3주차. 완전탐색, 백트래킹
-- [ ] 4주차. 비트마스킹
-- [ ] 5주차. 그리디 라인스위핑 투포인터
-- [ ] 6주차. 이분탐색과 LIS(최대증가부분수열)
-- [ ] 7주차. DP, 동적계획법, 다이나믹프로그래밍
-- [ ] 8주차. 펜윅트리와 최단거리알고리즘(다익스트라, 플로이드워셜, 벨만포드)
+### [큰돌](https://github.com/Jinsun-Lee/Algorithm-template/tree/master/study/1_bigstone)
+- [ ] [1주차. 시간복잡도, 빅오표기법, 공간복잡도, 누적합, 구현](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222283814653&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=2&postListTopCurrentPage=1&from=postView)
+- [ ] [2주차. 그래프이론, 인접행렬, 인접리스트, DFS, BFS, 트리순회](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222289089015&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=2&postListTopCurrentPage=1&from=postView)
+- [ ] [3주차. 완전탐색, 백트래킹](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222300377004&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=2&postListTopCurrentPage=1&from=postView)
+- [ ] [4주차. 비트마스킹](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222310927725&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
+- [ ] [5주차. 그리디 라인스위핑 투포인터](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222319124359&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
+- [ ] [6주차. 이분탐색과 LIS(최대증가부분수열)](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222335391575&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView&photoView=0)
+- [ ] [7주차. DP, 동적계획법, 다이나믹프로그래밍](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222349317111&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
+- [ ] [8주차. 펜윅트리와 최단거리알고리즘(다익스트라, 플로이드워셜, 벨만포드)](https://blog.naver.com/PostView.naver?blogId=jhc9639&logNo=222349335717&categoryNo=157&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView)
 
 
 </br> 

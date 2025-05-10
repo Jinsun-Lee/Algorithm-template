@@ -2,65 +2,61 @@
 #include <tuple> // tie(y, x)
 using namespace std;
 
-bool has10(bool chk[9]) {
+bool isValid(int arr[9]) {
+	bool chk[9] = {};
 	for (int i = 0; i < 9; ++i) {
-		if (!chk[i]) return false;
+		chk[arr[i] - 1] = true;
 	}
+	for (bool b : chk) if (!b) return false;
 	return true;
+}
+
+void getBlock(int map[9][9], int sy, int sx, int num[9]) {
+	int idx = 0;
+	for (int y = 0; y < 3; ++y) {
+		for (int x = 0; x < 3; ++x) {
+			num[idx++]=map[sy + y][sx + x];
+		}
+	}
 }
 
 int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
 
 	int tc; cin >> tc;
-	int map[9][9];
-	pair<int, int> coord[] = {  {1,1}, {1,4}, {1,7},
-								{4,1}, {4,4}, {4,7},
-								{7,1}, {7,4}, {7,7}};
-	int dy[] = {-1, -1, -1, 0, 1, 1, 1, 0};
-	int dx[] = {-1, 0, 1, 1, 1, 0, -1, -1};
-	
+	int map[9][9], tmp[9];
+	bool valid;
+
 	for (int t = 1; t <= tc; ++t) {
-		bool unique = true;
+		valid = true;
 
 		// 입력
-		for (int h = 0; h < 9; ++h) {
-			for (int w = 0; w < 9; ++w) {
-				cin >> map[h][w];
+		for (int i = 0; i < 9; ++i) {
+			for (int j = 0; j < 9; ++j) {
+				cin >> map[i][j];
 			}
 		}
 
-		// 가로 검사
-		for (int h = 0; h < 9 && unique; ++h) { // && uique
-			bool chk[9] = {}; // 이렇게 초기화
-			for (int w = 0; w < 9; ++w) {		
-				chk[map[h][w]-1] = 1; // 값이 1~9라서 인덱스로 접근하려면 -1
-			}
-			if(!has10(chk)) unique = false;
+		// 행/열
+		for (int i = 0; i < 9 && valid; ++i) { // && valid
+			if (!isValid(map[i])) valid = false; // 행
+
+			for (int j = 0; j < 9; ++j) tmp[j] = map[j][i]; // 열, wh 주의
+			if (!isValid(tmp)) valid = false;
 		}
 
-		// 세로 검사
-		for (int w = 0; w < 9 && unique; ++w) {
-			bool chk[9] = {};
-			for (int h = 0; h < 9; ++h) {
-				chk[map[h][w] - 1] = 1;
+		// 3x3 블록 체크(9개의 정사각형에서 구역별로 9칸 탐색)
+		for (int i = 0; i < 9 && valid; i += 3) {
+			for (int j = 0; j < 9; j += 3) {
+				getBlock(map, i, j, tmp);
+				if (!isValid(tmp)){
+					valid = false;
+					break;
+				}
 			}
-			if (!has10(chk)) unique = false;
 		}
 
-		// 대각선
-		for (pair<int, int>& p : coord) {
-			bool chk[9] = {};
-			for (int i = 0; i < 8; ++i) {
-				int ny = p.first + dy[i];
-				int nx = p.second + dx[i];
-				chk[map[ny][nx]-1] = 1;
-			}
-			chk[map[p.first][p.second] - 1] = 1; // 나 자신의 칸도 봐야지
-			if (!has10(chk)) unique = false;
-		}
-
-		cout << "#" << t << " " << ((unique) ? 1 : 0) << "\n";
+		cout << "#" << t << " " << ((valid) ? 1 : 0) << "\n";
 	}
 	return 0;
 }

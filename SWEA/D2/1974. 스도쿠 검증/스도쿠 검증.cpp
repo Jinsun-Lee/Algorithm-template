@@ -1,22 +1,25 @@
 #include <iostream>
-#include <tuple> // tie(y, x)
 using namespace std;
 
-bool isValid(int arr[9]) {
+int map[9][9];
+
+bool hasAll(int arr[9]) {
 	bool chk[9] = {};
 	for (int i = 0; i < 9; ++i) {
-		chk[arr[i] - 1] = true;
+		chk[arr[i]-1] = 1; // 숫자 다 있는지 
 	}
-	for (bool b : chk) if (!b) return false;
+	for (int i = 0; i < 9; ++i) {
+		if (chk[i] == 0) return false;
+	}
 	return true;
 }
 
-void getBlock(int map[9][9], int sy, int sx, int num[9]) {
+void getBlock(int y, int x, int num[9]) {
 	int idx = 0;
-	for (int y = 0; y < 3; ++y) {
-		for (int x = 0; x < 3; ++x) {
-			num[idx++]=map[sy + y][sx + x];
-		}
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			num[idx++] = map[y + i][x + j]; 
+		} // ++idx로 하면 첫 인덱스가 1니까 실수하지 마
 	}
 }
 
@@ -24,39 +27,37 @@ int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
 
 	int tc; cin >> tc;
-	int map[9][9], tmp[9];
-	bool valid;
-
 	for (int t = 1; t <= tc; ++t) {
-		valid = true;
 
-		// 입력
+		// 입력 1 3 6 8 9번만 1
 		for (int i = 0; i < 9; ++i) {
-			for (int j = 0; j < 9; ++j) {
+			for (int j = 0; j < 9; ++j)
 				cin >> map[i][j];
+		}
+
+		// 가로랑 세로
+		bool isValid = true;
+		for (int i = 0; i < 9 && isValid; ++i) {
+			isValid = hasAll(map[i]); // -> 0행부터 확인
+			if (!isValid) break; // 전부 없으면 멈춰
+
+			int col[9];
+			for (int j = 0; j < 9; ++j) col[j] = map[j][i];
+			isValid = hasAll(col); // col로 전달, ji인 거 주의 
+			if (!isValid) break;
+		}
+
+		// 3*3 블럭
+		int num[9];
+		for (int i = 0; i < 9 && isValid; i+=3) { // 3씩 키워야 해
+			for (int j = 0; j < 9 && isValid; j+=3) {
+				getBlock(i, j, num);
+				isValid = hasAll(num);
+				if (!isValid) break;
 			}
 		}
 
-		// 행/열
-		for (int i = 0; i < 9 && valid; ++i) { // && valid
-			if (!isValid(map[i])) valid = false; // 행
-
-			for (int j = 0; j < 9; ++j) tmp[j] = map[j][i]; // 열, wh 주의
-			if (!isValid(tmp)) valid = false;
-		}
-
-		// 3x3 블록 체크(9개의 정사각형에서 구역별로 9칸 탐색)
-		for (int i = 0; i < 9 && valid; i += 3) {
-			for (int j = 0; j < 9; j += 3) {
-				getBlock(map, i, j, tmp);
-				if (!isValid(tmp)){
-					valid = false;
-					break;
-				}
-			}
-		}
-
-		cout << "#" << t << " " << ((valid) ? 1 : 0) << "\n";
+		cout << "#" << t << " " << isValid << "\n";
 	}
 	return 0;
 }

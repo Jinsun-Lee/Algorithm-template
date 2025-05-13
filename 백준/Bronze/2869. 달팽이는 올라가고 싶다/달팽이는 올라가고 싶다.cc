@@ -1,11 +1,13 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
+
 int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
 	int A, B, V; cin >> A >> B >> V;
-    
-    // 100 99 1000000000 넣었을 때 1e+09로 나오네
-	cout << (long long)ceil((double)(V - B) / (A - B));
+	
+	// ceil(a / b)은 정수형에서는 (a + b - 1) / b로 계산 가능
+	int a = (V - B);
+	int b = (A - B);
+	cout << (a + b - 1) / b;
 	return 0;
 }

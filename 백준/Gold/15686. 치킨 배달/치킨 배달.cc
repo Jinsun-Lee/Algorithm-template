@@ -1,39 +1,68 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
 using namespace std;
 
-#define X first
-#define Y second
+struct Node {
+	int y, x;
+};
 
-int board[55][55];
-int n, m;
-vector<pair<int,int>> chicken;
-vector<pair<int,int>> house;
+int N, M, ans = INT_MAX;
+vector<Node> home, chicken;
 
-int main(void) {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
-  cin >> n >> m;
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < n; j++){
-      cin >> board[i][j];
-      if(board[i][j] == 1) house.push_back({i, j});
-      if(board[i][j] == 2) chicken.push_back({i, j});      
-    }
-  }
-  vector<int> brute(chicken.size(), 1);
-  fill(brute.begin(), brute.begin() + chicken.size() - m, 0); // 앞의 chicken.size() - m 칸은 0, 뒤의 m칸은 1
-  int mn = 0x7f7f7f7f; // 답을 저장할 변수
-  do{
-    int dist = 0; // 도시의 치킨 거리를 저장할 변수
-    for(auto h : house){
-      int tmp = 0x7f7f7f7f; // 집의 치킨 거리를 저장할 변수
-      for(int i = 0; i < chicken.size(); i++){
-        if(brute[i] == 0) continue;      
-        tmp = min(tmp, abs(chicken[i].X - h.X) + abs(chicken[i].Y - h.Y)); // 집의 치킨 거리 갱신
-      }
-      dist += tmp;
-    }
-    mn = min(mn, dist);
-  }while(next_permutation(brute.begin(), brute.end()));
-  cout << mn;
+int calDist(const vector<Node>& selected) {
+	int sum = 0;
+	for (const auto& h : home) {
+		int minn = INT_MAX;
+		for (const auto& c : selected) {
+			int dist = abs(h.y - c.y) + abs(h.x - c.x);
+			minn = min(minn, dist);
+			if (minn == 1) break; // 최소거리 나오면 탐색 불필요
+		}
+		sum += minn;
+		if (sum >= ans) return INT_MAX; // 현재까지의 거리가 ans보다 크면 탐색 불필요
+	}
+	return sum;
+}
+
+void dfs(int idx, vector<Node>& selected) {
+	if ((int)selected.size() == M) {
+		int sum = calDist(selected);
+		ans = min(ans, sum);
+		return;
+	}
+
+	// 치킨집 다 보면 탐색 종료
+	if (idx == (int)chicken.size()) return;
+
+	// 남은 치킨집의 수가 부족할 경우
+	if (selected.size() + ((int)chicken.size() - idx) < M) return;
+
+	// 선택 안 할 경우
+	dfs(idx + 1, selected);
+
+	selected.push_back(chicken[idx]);
+	dfs(idx + 1, selected);
+	selected.pop_back();
+}
+
+int main() {
+	ios::sync_with_stdio(0); cin.tie(0);
+
+	cin >> N >> M;
+	int tmp;
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) {
+			cin >> tmp;
+			if (tmp == 1) home.push_back({ i, j });
+			else if (tmp == 2) chicken.push_back({ i, j });
+		}
+	}
+
+	// 1. 치킨집을 M개 고름
+	vector<Node> selected = {};
+	dfs(0, selected);
+	cout << ans;
+	return 0;
 }

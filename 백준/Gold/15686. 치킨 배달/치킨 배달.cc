@@ -8,43 +8,43 @@ struct Node {
 	int y, x;
 };
 
-int N, M, ans = INT_MAX;
+int N, M, ans=INT_MAX;
 vector<Node> home, chicken;
 
-int calDist(const vector<Node>& selected) {
+//void dist(const vector<Node>& home, const vector<Node>& chicken) { // const vector<Node>& home
+void dist(vector<Node>& selected) {
 	int sum = 0;
 	for (const auto& h : home) {
-		int minn = INT_MAX;
+		int minn = 2*N; //  집과 여러 치킨집 사이의 거리를 계산
 		for (const auto& c : selected) {
-			int dist = abs(h.y - c.y) + abs(h.x - c.x);
-			minn = min(minn, dist);
-			if (minn == 1) break; // 최소거리 나오면 탐색 불필요
+			int tmp = abs(h.y-c.y) + abs(h.x-c.x);
+			minn = min(minn, tmp);
 		}
-		sum += minn;
-		if (sum >= ans) return INT_MAX; // 현재까지의 거리가 ans보다 크면 탐색 불필요
+		sum += minn; // 각 집과 치킨최소거리 리턴
 	}
-	return sum;
+	ans = min(ans, sum);
 }
 
-void dfs(int idx, vector<Node>& selected) {
-	if ((int)selected.size() == M) {
-		int sum = calDist(selected);
-		ans = min(ans, sum);
+//void select(int dep, vector<Node>& chick, const vector<Node>& home, vector<Node>& selected) { // home은 const랑 &, 둘은 그냥 &
+void dfs(int dep, vector<Node>& selected) { 
+	//if (dep >= M && select.size()==M) {
+	if (selected.size()==M) {
+		dist(selected); // 2. 집과 전체 최소 거리 계산
 		return;
 	}
+	
+	//if (chick.empty()) return;
+	if (dep >= chicken.size()) return;
 
-	// 치킨집 다 보면 탐색 종료
-	if (idx == (int)chicken.size()) return;
+	//Node chx = chick.front(); chick.pop_front(); // 벡터 시간복잡도 확인, 이거 몰랐음, pop_front 없음
+	
+	//dfs(dep, chick, home, selected); // 선택 안 할 경우
+	dfs(dep+1, selected);
 
-	// 남은 치킨집의 수가 부족할 경우
-	if (selected.size() + ((int)chicken.size() - idx) < M) return;
-
-	// 선택 안 할 경우
-	dfs(idx + 1, selected);
-
-	selected.push_back(chicken[idx]);
-	dfs(idx + 1, selected);
-	selected.pop_back();
+	//selected.push_back(chk);
+	selected.push_back(chicken[dep]);
+	dfs(dep + 1, selected);
+	selected.pop_back(); // 있는게 맞나
 }
 
 int main() {

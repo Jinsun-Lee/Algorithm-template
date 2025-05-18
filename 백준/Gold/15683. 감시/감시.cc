@@ -81,7 +81,7 @@ int main() {
 		}
 	}
 
-	dfs((int)cams.size(), visited, cams);
+	dfs(cams.size(), visited, cams);
 	cout << ans;
 	return 0;
 }

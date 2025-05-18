@@ -1,5 +1,4 @@
 #include <iostream>
-#include <queue>
 #include <vector>
 #include <cstring>
 #include <algorithm>
@@ -9,12 +8,7 @@ const int MX = 9;
 int N, M, map[MX][MX], ans;
 const int dy[4] = { 0, 1, 0, -1 }, dx[4] = { 1, 0, -1, 0 };
 
-struct Camera {
-	int c, y, x;
-	bool operator < (const Camera& other) const {
-		return c < other.c;
-	}
-};
+struct Camera { int c, y, x; };
 
 const vector<vector<vector<int>>> dirCam = {
 	{},
@@ -44,8 +38,8 @@ void count(bool vis[MX][MX]) {
 	ans = min(ans, cnt);
 }
 
-void dfs(int res, bool vis[MX][MX], priority_queue<Camera> cams) {
-	if (res == 0) {
+void dfs(int dep, bool vis[MX][MX], const vector<Camera>& cams) {
+	if (dep == cams.size()) {
 		count(vis);
 		return;
 	}
@@ -53,10 +47,10 @@ void dfs(int res, bool vis[MX][MX], priority_queue<Camera> cams) {
 	bool backup[MX][MX];
 	memcpy(backup, vis, sizeof(backup));
 
-	Camera cam = cams.top(); cams.pop();
+	const Camera& cam = cams[dep];
 	for (const auto& dirs : dirCam[cam.c]) {
 		for (int d : dirs) cctv(cam.y, cam.x, d, vis);
-		dfs(res - 1, vis, cams);
+		dfs(dep + 1, vis, cams);
 		memcpy(vis, backup, sizeof(backup));
 	}
 }
@@ -65,23 +59,26 @@ int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
 
 	cin >> N >> M; ans = N * M;
-	priority_queue<Camera> cams;
+
+	vector<Camera> cams, cam5;
+	bool visited[MX][MX] = {};
+
+	int cam;
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			cin >> map[i][j];
-			if (map[i][j] != 0 && map[i][j] != 6) cams.push({ map[i][j], i, j });
+			cin >> cam; map[i][j] = cam;
+			if (cam == 0 || cam == 6) continue;
+			if (cam == 5) cam5.push_back({ cam, i, j });
+			else cams.push_back({ cam, i, j });
 		}
 	}
 
-	bool visited[MX][MX] = {};
-	while (!cams.empty() && cams.top().c == 5) {
-		Camera cam = cams.top(); cams.pop();
-		for (int dir : dirCam[5][0]) {
-			cctv(cam.y, cam.x, dir, visited);
-		}
+	while (!cam5.empty()) {
+		Camera cam = cam5.back(); cam5.pop_back();
+		for (int dir : dirCam[5][0]) cctv(cam.y, cam.x, dir, visited);
 	}
 
-	dfs(cams.size(), visited, cams);
+	dfs(0, visited, cams);
 	cout << ans;
 	return 0;
 }

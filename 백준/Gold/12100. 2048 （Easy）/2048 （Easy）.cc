@@ -6,118 +6,68 @@
 using namespace std;
 
 const int MX = 21;
-int N, map[MX][MX], ans=INT_MIN;
+int N, map[MX][MX], ans = INT_MIN;
 
-void up(int map[MX][MX]) {
-	queue<int> q;
-	for (int x = 0; x < N; ++x) {
-		for (int y = 0; y < N; ++y) {
-			if (map[y][x] != 0) q.push(map[y][x]);
-			map[y][x] = 0;
-		}
-		int idx = 0, pre = 0, nxt = 0;
-		while (!q.empty()) {
-			if (pre == 0) { pre = q.front(); q.pop(); }
-			else { 
-				nxt = q.front(); q.pop();
-				map[idx][x] = pre;
-				if (pre == nxt) { pre = 0; map[idx][x] += nxt; }
-				else pre = nxt; 
-				idx++;
-			}
-		}
-		if (pre != 0) map[idx][x] = pre;
+void turnCW(int map[MX][MX]) {
+	int tmp[MX][MX];
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) tmp[j][N - i - 1] = map[i][j];
 	}
+	memcpy(map, tmp, sizeof(tmp));
 }
 
-void right(int map[MX][MX]) {
-	queue<int> q;
-	for (int y = 0; y < N; ++y) {	
-		for (int x = N - 1; x >= 0; --x) {
-			if (map[y][x] != 0) q.push(map[y][x]);
-			map[y][x] = 0;
-		}
-		int idx = N - 1, pre = 0, nxt = 0;
-		while (!q.empty()) {
-			if (pre == 0) { pre = q.front(); q.pop(); }
-			else {
-				nxt = q.front(); q.pop();
-				map[y][idx] = pre;
-				if (pre == nxt) { pre = 0; map[y][idx] += nxt; }
-				else pre = nxt;
-				idx--;
-			}
-		}
-		if (pre != 0) map[y][idx] = pre;
+void turnCCW(int map[MX][MX]) {
+	int tmp[MX][MX];
+	for (int i = 0; i < N; ++i) {
+		for (int j = 0; j < N; ++j) tmp[N - j - 1][i] = map[i][j];
 	}
+	memcpy(map, tmp, sizeof(tmp));
 }
 
-void down(int map[MX][MX]) {
+void mergeLeft(int map[MX][MX]) {
 	queue<int> q;
-	for (int x = 0; x < N; ++x) {
-		for (int y = N - 1; y >= 0; --y) {
-			if (map[y][x] != 0) q.push(map[y][x]);
-			map[y][x] = 0;
-		}
-		int idx = N - 1, pre = 0, nxt = 0;
-		while (!q.empty()) {
-			if (pre == 0) { pre = q.front(); q.pop(); }
-			else {
-				nxt = q.front(); q.pop();
-				map[idx][x] = pre;
-				if (pre == nxt) { pre = 0; map[idx][x] += nxt; }
-				else pre = nxt;
-				idx--;
-			}
-		}
-		if (pre != 0) map[idx][x] = pre;
-	}
-}
 
-void left(int map[MX][MX]) {
-	queue<int> q;
 	for (int y = 0; y < N; ++y) {
 		for (int x = 0; x < N; ++x) {
 			if (map[y][x] != 0) q.push(map[y][x]);
-			map[y][x] = 0;
+			map[y][x] = 0; // map은 0으로 갱신
 		}
-		int idx = 0, pre = 0, nxt = 0;
+
+		int xx = 0, pre = 0;
 		while (!q.empty()) {
-			if (pre == 0) { pre = q.front(); q.pop(); }
+			int cur = q.front(); q.pop();
+			if (pre == 0) pre = cur; // 초기거나, 합쳐졌을 때
 			else {
-				nxt = q.front(); q.pop();
-				map[y][idx] = pre;
-				if (pre == nxt) { pre = 0; map[y][idx] += nxt; }
-				else pre = nxt;
-				idx++;
+				if (pre == cur) {
+					map[y][xx++] = pre * 2;
+					pre = 0;
+				}
+				else { // pre가 0은 아닌데, 달라
+					map[y][xx++] = pre;
+					pre = cur;
+				}
 			}
 		}
-		if (pre != 0) map[y][idx] = pre;
+		if (pre != 0) map[y][xx] = pre;
 	}
 }
 
-void comb(int dir, int map[MX][MX]) {
-	if (dir == 0) up(map);
-	else if (dir == 1) right(map);
-	else if (dir == 2) down(map);
-	else left(map);
-}
-
 void dfs(int dep, int map[MX][MX]) {
-	if (dep >=5) {
+	if (dep >= 5) {
 		for (int i = 0; i < N; ++i) {
 			ans = max(ans, *max_element(map[i], map[i] + N));
 		}
 		return;
 	}
 
-	int backup[MX][MX];
-	memcpy(backup, map, sizeof(backup));
-
 	for (int dir = 0; dir < 4; ++dir) {
-		comb(dir, map);
-		dfs(dep + 1, map);
-		memcpy(map, backup, sizeof(backup));
+		int backup[MX][MX];
+		memcpy(backup, map, sizeof(backup));
+
+		for (int i = 0; i < dir; ++i) turnCW(backup);
+		mergeLeft(backup);
+		for (int i = 0; i < dir; ++i) turnCCW(backup);
+		dfs(dep + 1, backup);
 	}
 }
 
@@ -126,9 +76,7 @@ int main() {
 
 	cin >> N;
 	for (int i = 0; i < N; ++i) {
-		for (int j = 0; j < N; ++j) {
-			cin >> map[i][j];
-		}
+		for (int j = 0; j < N; ++j) cin >> map[i][j];
 	}
 
 	dfs(0, map);

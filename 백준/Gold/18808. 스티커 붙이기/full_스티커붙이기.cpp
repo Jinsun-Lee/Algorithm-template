@@ -5,6 +5,8 @@ const int MX = 10;
 int N, M, K, R, C;
 bool map[40][40], sticker[MX][MX];
 
+// 시계 방향은 N인 거랑, 정사각형 아니라서 swap하고 for문으로 넣어
+// 스티커는 R, C잖아... NM말고
 void turnCW() {
 	int tmp[MX][MX];
 	for (int i = 0; i < R; ++i) {
@@ -14,13 +16,12 @@ void turnCW() {
 	} swap(R, C);
 
 	//memcpy(sticker, tmp, sizeof(tmp)); 안 돼
-	for (int i = 0; i < R; ++i) {
-		for (int j = 0; j < C; ++j) {
-			sticker[i][j] = tmp[i][j];
-		}
+	for (int i = 0; i < R; ++i) { 
+		for (int j = 0; j < C; ++j) sticker[i][j] = tmp[i][j];
 	}	
 }
 
+//⭐붙일 수 있는지는 RC 스티커 범위를 기준으로 돌려
 bool pastable(int y, int x) {
 	// 붙일수 있는지 먼저 확인
 	for (int i = 0; i < R; ++i) {
@@ -39,16 +40,12 @@ bool pastable(int y, int x) {
 }
 
 bool match() {
-	bool isPaste = false; // 스티커 붙였는지
-	for (int i = 0; i < N-R+1 && !isPaste; ++i) { // N-R+1에 등호 안 붙는다
+	for (int i = 0; i < N-R+1; ++i) {
 		for (int j = 0; j < M-C+1; ++j) {
-			if (pastable(i, j)) { // 붙일 수 있으면
-				isPaste = true;
-				break;
-			}
+			if (pastable(i, j)) return true; // 붙일 수 있으면
 		}
 	}
-	return isPaste;
+	return false;
 }
 
 int main() {
@@ -64,10 +61,31 @@ int main() {
 		}
 
 		// 3. 어디에 붙일지 
-		for (int i = 0; i < 4; ++i) { // 0 90 180 270
-			if (match() || i == 3) break; // 붙여서 ready거나 270도는 회전X라 for문 종료
+		/* 방법1
+  		for (int d = 0; d < 4; ++d) { // 0 90 180 270
+			if (match() || d == 3) break; // 붙여서 ready거나 270도는 회전X라 for문 종료
 			turnCW(); // false는 못붙이니 돌려
 		}
+ 		*/
+
+		//⭐방법2
+		//bool pasted = false;
+		for (int d = 0; d < 4; d++) { 
+			bool isPaste = false; // 위치 주의
+
+			// 붙일 수 있나 확인하고, 붙일 수 있으면 붙여
+			for (int i = 0; i <= N-R && !isPaste; i++) { // i<N-R+1 or i<=N-R
+				for (int j = 0; j <= M-C; ++j) {
+					isPaste = pastable(i, j);
+					if (isPaste) break;
+				}
+			}
+
+			// 붙였거나, 270도면 회전X
+			if (isPaste || d == 3) break; 
+			turnCW();
+		}
+
 	}
 
 	// 4. 세고 출력

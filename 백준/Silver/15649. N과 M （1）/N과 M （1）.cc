@@ -1,34 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int n, m;
-bool visited[9];
+int N, M;
+bool used[8];
 
-void chk(int depth, string result) {
-	// m 자리수까지만 돌게
-	if (m <= depth) {
-		for (char c : result) cout << c << " ";
+void dfs(int depth, string ans) {
+	if (depth >= M) {
+		for (char c : ans) cout << c << " ";
 		cout << "\n";
 		return;
 	}
 
-	for (int i = 1; i <= n; i++) {
-		if (visited[i]) continue;
-
-		result += (i+'0');
-		visited[i] = 1;
-		chk(depth + 1, result);
-		result.pop_back();
-		visited[i] = 0;
+	for (int i = 0; i < N; ++i) {
+		if (used[i]) continue;
+		used[i] = 1;
+		ans += i + 1 + '0';
+		dfs(depth + 1, ans);
+		used[i] = 0;
+		ans.pop_back();
 	}
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-
-	cin >> n >> m;
-	chk(0, "");
-
+	ios::sync_with_stdio(0); cin.tie(0);
+	cin >> N >> M;
+	dfs(0, "");
 	return 0;
 }

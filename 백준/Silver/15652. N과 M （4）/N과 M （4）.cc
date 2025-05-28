@@ -1,27 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int N,M;
-int arr[9];
+int N, M, ans[8];
 
-void dfs(int depth){
-	if(depth>=M){
-		for(int i = 0; i <M; i++) cout << arr[i] << " ";
+void dfs(int depth, int start) {
+	if (depth >= M) {
+		for (int i = 0; i < M; ++i) cout << ans[i] << " ";
 		cout << "\n";
 		return;
 	}
 
-	int start = 1;
-	if(depth!=0) start = arr[depth-1];
-	for(int i = start; i <=N; i++){
-		arr[depth]=i;
-		dfs(depth+1);
+	for (int i = start; i < N; ++i) {
+		ans[depth] = i + 1;
+		dfs(depth + 1, i);
 	}
 }
 
-int main(){
+int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
 	cin >> N >> M;
-	dfs(0);
+	dfs(0, 0);
 	return 0;
 }

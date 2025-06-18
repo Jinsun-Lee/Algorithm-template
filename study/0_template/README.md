@@ -4,8 +4,12 @@
 
 <br>
 
-- [1. 기본](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/1_%EA%B8%B0%EB%B3%B8.md)
-- [2. 문자열](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/2_%EB%AC%B8%EC%9E%90%EC%97%B4.md)
+1. [기본](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/1_%EA%B8%B0%EB%B3%B8.md):  
+배열과 벡터의 선언(1,2차원), 초기화, 정렬(오름,내림차순)  
+동적할당, call by address
+2. [문자열](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/2_%EB%AC%B8%EC%9E%90%EC%97%B4.md):  
+문자열 찾기, 추출, 거꾸로  
+반복된 문자, 문자열 복사, 문자열 수정 
 
 <br>
 

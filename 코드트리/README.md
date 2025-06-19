@@ -5,6 +5,7 @@
 |17|[조삼모사 ![Silver2][s2]](https://www.codetree.ai/ko/frequent-problems/problems/three-at-dawn-and-four-at-dusk/description)|Backtracking|[250421](https://github.com/Jinsun-Lee/private_algorithm/issues/99)|
 |17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking|[250422](https://github.com/Jinsun-Lee/private_algorithm/issues/101)|
 |18|[드래곤 커브 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/problems/dragon-curve/description)|Simulation|[250423](https://github.com/Jinsun-Lee/private_algorithm/issues/107)|
+|19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS|[250619](https://github.com/Jinsun-Lee/Algorithm-template/discussions/45)|
 || ||[]()|
 || ||[]()|
 || ||[]()|

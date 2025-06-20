@@ -6,7 +6,7 @@
 |17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking|[250422](https://github.com/Jinsun-Lee/private_algorithm/issues/101)|
 |18|[드래곤 커브 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/problems/dragon-curve/description)|Simulation|[250423](https://github.com/Jinsun-Lee/private_algorithm/issues/107)|
 |19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS|[250619](https://github.com/Jinsun-Lee/Algorithm-template/discussions/45)|
-|| ||[]()|
+|25|[민트 초코 우유 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description)|Simulation, BFS|[250620](https://github.com/Jinsun-Lee/Algorithm-template/discussions/46)|
 || ||[]()|
 || ||[]()|
 

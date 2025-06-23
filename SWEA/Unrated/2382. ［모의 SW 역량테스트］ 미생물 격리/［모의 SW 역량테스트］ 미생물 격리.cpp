@@ -1,20 +1,24 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <cstring>
 using namespace std;
 
 const int dy[4] = { -1,1,0,0 }, dx[4] = { 0,0,-1,1 }; // 상하좌우
-const int MX = 100;
-int N, M, K; // 크기, 반복시간, 미생물군집수 1000개
+const int newDir[4] = { 1, 0, 3, 2 }; // 새로운 방향, 함수 대체
+
+int N, M, K; // 격자크기, 반복시간, 미생물군집수
 
 struct Cell { int y, x, cnt, dir; };
-
 vector<Cell> cells; // y, x, 군집수, 방향
 
-void input() {
-	cells.clear(); // 주의!!!!!!
+const int MX = 100;
+int sumCnt[MX][MX], maxCnt[MX][MX], maxDir[MX][MX];
 
+void input() {
 	cin >> N >> M >> K;
+
+	cells.clear(); // 초기화
+	cells.reserve(K); // 재할당 최소화
 
 	int y, x, cnt, dir;
 	while (K--) {
@@ -23,23 +27,11 @@ void input() {
 	}
 }
 
-int newDir(int dir) {
-	if (dir == 0 || dir == 2) return dir + 1;
-	else return dir - 1; // 1,  3일 때
-}
-
 void move() {
-	//vector<vector<vector<Cell>>> map(N, vector<vector<Cell>>(N));
-	static Cell* nxtMap[MX][MX] = {};
-	static int sumCnt[MX][MX] = {};
-	static int maxCnt[MX][MX] = {};
-	static int maxDir[MX][MX] = {};
-
 	// 초기화
-	for (int i = 0; i < N; ++i) {
-		for (int j = 0; j < N; ++j)
-			sumCnt[i][j] = maxCnt[i][j] = maxDir[i][j] = 0;
-	}
+	memset(sumCnt, 0, sizeof(sumCnt));
+	memset(maxCnt, 0, sizeof(maxCnt));
+	memset(maxDir, 0, sizeof(maxDir));
 
 	// 일단 전부 이동을 해
 	for (auto& cur : cells) {
@@ -48,10 +40,9 @@ void move() {
 
 		// 이동 후 빨간 테두리면 절반(0이면 추가X), 이동 반대 
 		if (ny == N - 1 || nx == N - 1 || ny == 0 || nx == 0) {
-			int half = cur.cnt / 2; 
-			if (half == 0) continue;
-			cur.cnt = half;
-			cur.dir = newDir(cur.dir);
+			cur.cnt >>= 1; // 비트 시프트로 나눗셈 대체 cur.cnt /= 2;
+			if (cur.cnt == 0) continue; 
+			cur.dir = newDir[cur.dir];
 		}
 
 		sumCnt[ny][nx] += cur.cnt;
@@ -72,6 +63,7 @@ void move() {
 }
 
 int cntCells() {
+	// cur.cnt를 continue 뒤에서 갱신해도 continue라 어차피 sumCnt에 안 더해서 괜찮아 cells.clear()하고 갱신하니까
 	int sum = 0;
 	for (const Cell& c : cells) sum += c.cnt; // 이중for문 X
 	return sum;
@@ -79,14 +71,11 @@ int cntCells() {
 
 int main() {
 	ios::sync_with_stdio(0); cin.tie(0);
-	//freopen_s(new FILE*, "input.txt", "r", stdin);
 
 	int tc; cin >> tc;
 	for (int t = 1; t <= tc; ++t) {
 		input();
-
 		while (M--) move();
-
 		cout << "#" << t << " " << cntCells() << "\n";
 	}
 	return 0;

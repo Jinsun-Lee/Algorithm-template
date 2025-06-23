@@ -4,8 +4,8 @@ using namespace std;
 
 struct Cell { int y, x, cnt, dir; };
 
-const int dy[4] = { -1,1,0,0 }, dx[4] = { 0,0,-1,1 };
-const int newDir[4] = { 1, 0, 3, 2 };
+const int dy[5] = {0,-1,1,0,0}, dx[5] = {0,0,0,-1,1};
+const int newDir[5] = {0,2,1,4,3};
 
 const int MX = 101;
 int sumCnt[MX][MX], maxCnt[MX][MX], maxDir[MX][MX];
@@ -18,16 +18,16 @@ int main() {
 		int N, M, K; cin >> N >> M >> K;
 
 		vector<Cell> cells;
-		vector<pair<int, int>> visited;
-
 		cells.reserve(K);
-		visited.reserve(K);
 
-		int y, x, cnt, dir;
-		while (K--) {
-			cin >> y >> x >> cnt >> dir;
-			cells.push_back({ y, x, cnt, dir - 1 });
+		for (int i = 0; i < K; ++i) {
+			Cell c;
+			cin >> c.y >> c.x >> c.cnt >> c.dir;
+			cells.push_back(c);
 		}
+
+		vector<pair<int, int>> visited;
+		visited.reserve(K);
 
 		while (M--) {
 			visited.clear();

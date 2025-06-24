@@ -57,14 +57,13 @@ int main() {
         //if (ny > N || nx > N || ny < 1 || nx < 1 || map[ny][nx] == -1) break;
         
         // 문제의 구간
-        if (map[ny][nx] == 1) map[ny][nx] = 0;
-        else if (map[ny][nx] == 0) { // 벽이면 오래된 것 = 가장 끝 제거
+        if (map[ny][nx] == 0) { // 벽이면 오래된 것 = 가장 끝 제거
             map[qPath.front().first][qPath.front().second] = 0; // 꼬리 제거한다고 말해줘야지
             qPath.pop(); 
         }
 
-        qPath.push({ ny, nx }); // 벽이든 사과든 현재 위치 추가
         map[ny][nx] = -1;
+        qPath.push({ ny, nx }); // 벽이든 사과든 현재 위치 추가
 
         // x초 끝나고 회전
         if (curT == nxtT) { // 이번 시간에 회전한다면

@@ -19,3 +19,4 @@
 <br>
 
 - [싸피 코테 준비(~25/05/25)](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/250525_%EC%8B%B8%ED%94%BC.md)
+- [싸피 입과 이전(~25/06/25)](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_template/250625_%EC%8B%B8%ED%94%BC_%EC%9E%85%EA%B3%BC%EC%A0%84.md)

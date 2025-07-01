@@ -13,3 +13,9 @@
 *.exe
 *.pdb
 /study/4_cotehap/ch14_시뮬레이션/.vs/ch14_시뮬레이션/v17
+*.ipch
+*.obj
+*.recipe
+/study/1_temp/4_cotehap/ch11_그래프/ch11_그래프/x64
+/study/1_temp/4_cotehap/ch11_그래프/.vs
+/study/1_temp/4_cotehap/ch14_시뮬레이션/.vs

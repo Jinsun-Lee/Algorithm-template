@@ -1,4 +1,4 @@
-# 코드트리 기출 리스트
+# [코드트리 기출 리스트](https://github.com/Jinsun-Lee/Algorithm-template/discussions/12)
 
 |출처|제목|유형|풀이|
 |---|---|---|---|

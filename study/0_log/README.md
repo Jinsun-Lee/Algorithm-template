@@ -1,2 +1,0 @@
-- [싸피 코테 준비(~25/05/25)](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_log/250525_%EC%8B%B8%ED%94%BC_%EB%A9%B4%EC%A0%91%EC%A0%84.md)
-- [싸피 입과 이전(~25/06/25)](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/study/0_log/250625_%EC%8B%B8%ED%94%BC_%EC%9E%85%EA%B3%BC%EC%A0%84.md)

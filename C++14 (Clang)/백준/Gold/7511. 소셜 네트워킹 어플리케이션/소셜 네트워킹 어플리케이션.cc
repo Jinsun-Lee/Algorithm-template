@@ -1,9 +1,8 @@
 #include <iostream>
-#include <algorithm>
+#include <vector>
 using namespace std;
 
-const int MX = 1000001;
-int p[MX];
+vector<int> p;
 
 int find(int x) {
 	if (p[x] < 0) return x;
@@ -27,13 +26,13 @@ int main() {
 	for (int t = 1; t <= tc; ++t) {
 		cout << "Scenario " << t << ":\n";
         
-        // 초기화 필수
-        fill(p, p+MX, -1);
+		int n, k, u, v, m;
+		cin >> n >> k; // 유저의 수, 친구관계의 수
         
-		int a, b, u, v, m;
-		cin >> a >> b; // 유저의 수, 친구관계의 수
-
-		while (b--) {
+        // 초기화 필수
+        p.assign(n+1, -1);
+        
+		while (k--) {
 			cin >> u >> v; // 친구라는 뜻
 			uni(u, v);
 		}

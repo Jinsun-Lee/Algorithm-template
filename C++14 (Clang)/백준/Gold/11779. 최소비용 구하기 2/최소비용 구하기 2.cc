@@ -43,12 +43,13 @@ int main(void) {
 
     cout << d[en] << "\n";
 
-    string path = to_string(en);
+    string path = "";
     int cnt;
     for (cnt = 1; en != st; ++cnt) {
-        en = pre[en];
         path = to_string(en) + " " + path;
+        en = pre[en];
     }
+    path = to_string(en) + " " + path;
     cout << cnt << "\n";
     cout << path;
 

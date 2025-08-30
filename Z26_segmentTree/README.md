@@ -1,4 +1,4 @@
-# [디스커션](https://github.com/Jinsun-Lee/Algorithm-template/discussions/64)
+# [세그먼트 트리](https://github.com/Jinsun-Lee/Algorithm-template/discussions/64)
 1. [2042. 구간 합 구하기](https://www.acmicpc.net/problem/2042)
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/1_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_1%EA%B8%B0%EB%B0%98_diff.cpp)탑다운_1기반_diff  
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/2_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_diff.cpp)탑다운_0기반_diff

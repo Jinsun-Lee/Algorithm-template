@@ -10,7 +10,7 @@
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/8_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_LAZY.cpp)탑다운_0기반_LAZY
 
 
-2. [구간 합 구하기 2](https://www.acmicpc.net/problem/10999): lazy로 풀어
+2. [10999. 구간 합 구하기 2](https://www.acmicpc.net/problem/10999): lazy로 풀어
     - [⭐⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/9_10999_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_LAZY.cpp)탑다운_0기반_LAZY
 
 3. 

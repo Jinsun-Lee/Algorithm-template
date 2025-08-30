@@ -1,7 +1,7 @@
 # [디스커션](https://github.com/Jinsun-Lee/Algorithm-template/discussions/64)
 1. [2042. 구간 합 구하기](https://www.acmicpc.net/problem/2042)
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/1_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_1%EA%B8%B0%EB%B0%98_diff.cpp)탑다운_1기반_diff  
-    - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/2_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_diff.cpp)탑다운_0기반_diff)
+    - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/2_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_diff.cpp)탑다운_0기반_diff
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/3_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_%EC%83%88%EA%B0%92%EB%8C%80%EC%9E%85.cpp)탑다운_0기반_새값대입
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/4_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_%EC%83%88%EA%B0%92%EB%8C%80%EC%9E%85_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9.cpp)탑다운_0기반_새값대입_다이나믹
     - [⭐](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/5_2042_%ED%83%91%EB%8B%A4%EC%9A%B4_0%EA%B8%B0%EB%B0%98_%EC%83%88%EA%B0%92%EB%8C%80%EC%9E%85_%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9_%ED%8F%AC%EC%9D%B8%ED%84%B0%EB%A7%81%ED%81%AC%EB%93%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8.cpp)탑다운_0기반_새값대입_다이나믹_포인터링크드리스트

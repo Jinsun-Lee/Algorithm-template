@@ -10,7 +10,7 @@
 # 
 # 
 # 
-# 
+# [이분탐색](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/README.md)
 # 
 # 
 # 

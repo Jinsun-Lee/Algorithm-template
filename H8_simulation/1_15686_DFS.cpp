@@ -8,18 +8,20 @@ int N, M, ans = 0x7fffffff;
 struct Node { int y, x; };
 vector<Node> home, chicken, selected;
 
-void dist(vector<Node>& selected) {
+void calDist(vector<Node>& selected) {
 	int sum = 0;
     
 	for (const auto& h : home) {
-		int minn = 2*N; 
+		int minDist = 2 * N;
         
 		for (const auto& c : selected) {
-			minn = min(minn, abs(h.y-c.y) + abs(h.x-c.x));
-            if (minn == 1) break;
+			int dist = abs(h.y-c.y) + abs(h.x-c.x);
+			minDist = min(minDist, dist);
+
+			if (minDist == 1) break;
 		}
         
-		sum += minn; 
+		sum += minDist; 
         if (sum>=ans) return;
 	}
     
@@ -28,7 +30,7 @@ void dist(vector<Node>& selected) {
 
 void DFS(int idx, vector<Node>& selected) { 
 	if (selected.size()==M) {
-		dist(selected);
+		calDist(selected);
 		return;
 	}
 	
@@ -54,6 +56,7 @@ int main() {
 		}
 	}
 
+	//vector<Node> selected = {}; // 전역으로 해야 0ms 나와
 	DFS(0, selected);
     
 	cout << ans;

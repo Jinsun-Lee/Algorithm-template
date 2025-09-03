@@ -18,11 +18,11 @@ void calDist(vector<Node>& selected) {
 			int dist = abs(h.y-c.y) + abs(h.x-c.x);
 			minDist = min(minDist, dist);
 
-			if (minDist == 1) break;
+			if (minDist == 1) break; // 최소거리 나오면 탐색 불필요
 		}
         
 		sum += minDist; 
-        if (sum>=ans) return;
+        if (sum>=ans) return; // 현재까지의 거리가 ans보다 크면 탐색 불필요
 	}
     
 	ans = min(ans, sum);
@@ -34,12 +34,12 @@ void DFS(int idx, vector<Node>& selected) {
 		return;
 	}
 	
-	if (idx == chicken.size()) return;
-    if (selected.size() + (chicken.size() - idx) < M) return;
+	if (idx == chicken.size()) return; // 치킨집 다 보면 탐색 종료
+    if (selected.size() + (chicken.size() - idx) < M) return; // 남은 치킨집의 수가 부족할 경우
     
-	DFS(idx + 1, selected);
+	DFS(idx + 1, selected); // 선택 안 할 경우
 	selected.push_back(chicken[idx]);
-	DFS(idx + 1, selected);
+	DFS(idx + 1, selected); // 선택 할 경우
 	selected.pop_back(); 
 }
 

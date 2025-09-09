@@ -45,7 +45,6 @@ void solve() {
 		map[u.first.y][u.first.x] = u.second;
 		if (u.second > 0) nextIce.push_back({ u.first.y, u.first.x }); // 높이 h가 0 이상일 때 반영해 줌
 	}
-
 	ice.swap(nextIce);
 }
 

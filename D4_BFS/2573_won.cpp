@@ -2,24 +2,27 @@
 #include <queue>
 #include <vector>
 #include <algorithm>
+#include <cstring>
 using namespace std;
 
 const int MX = 300;
 
-const int dy[] = {-1, 0, 1, 0 }; 
-const int dx[] = {0, 1, 0, -1};
+const int dy[] = { -1, 0, 1, 0 };
+const int dx[] = { 0, 1, 0, -1 };
 
-int N, M;
-vector<vector<int>> map, tmp;
-vector<vector<bool>> vis;
+int N, M, map[MX][MX], tmp[MX][MX];
+bool vis[MX][MX];
+
+struct Node { int y, x; };
+vector<Node> ice;
 
 bool isEmpty = false;
 
 void solve() {
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			if (map[i][j]) {
-				// 얼음이 없는 것 패스
+            
+			if (map[i][j]) { // 얼음이 없는 것 패스
 				for (int d = 0; d < 4; ++d) {
 					int ny = i + dy[d];
 					int nx = j + dx[d];
@@ -32,7 +35,7 @@ void solve() {
 	}
 
 	for (int i = 0; i < N; ++i) {
-		for (int j = 0; j < M; ++j) map[i][j] = max(0, map[i][j]-tmp[i][j]);
+		for (int j = 0; j < M; ++j) map[i][j] = max(0, map[i][j] - tmp[i][j]);
 	}
 }
 
@@ -41,7 +44,7 @@ void BFS(int y, int x) {
 
 	queue<pair<int, int>> q;
 	q.push({ y, x });
-	
+
 	while (!q.empty()) {
 		auto cur = q.front(); q.pop();
 
@@ -58,7 +61,7 @@ void BFS(int y, int x) {
 }
 
 bool check() { // 연결 요소 개수 확인
-	vis.assign(N, vector<bool>(M));
+	memset(vis, 0, sizeof(vis));
 
 	int connected = 0;
 	for (int i = 0; i < N; ++i) {
@@ -80,12 +83,8 @@ bool check() { // 연결 요소 개수 확인
 }
 
 int main() {
-	//freopen_s(new FILE*, "input.txt", "r", stdin);
 	ios::sync_with_stdio(0); cin.tie(0);
 	cin >> N >> M;
-
-	map.assign(N, vector<int>(M));
-	//vis.assign(N, vector<bool>(M));
 
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) cin >> map[i][j];
@@ -93,7 +92,7 @@ int main() {
 
 	int ans = 0;
 	while(1) {
-		tmp.assign(N, vector<int>(M, 0)); // 빙산이 녹을 때 녹는 값 저장, 0 주의
+		memset(tmp, 0, sizeof(tmp));
 
 		solve(); // 빙산 녹이기
 		++ans;
@@ -103,6 +102,5 @@ int main() {
 
 	if (isEmpty) cout << 0;
 	else cout << ans;
-
 	return 0;
 }

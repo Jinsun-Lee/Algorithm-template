@@ -6,3 +6,25 @@
 
 <br>
 
+```cpp
+// N개 중에서 M개 선택 시, 앞에 M개가 0(선택)
+vector<bool> mask(N, 1); // 011 → 101 → 110
+fill(mask.begin(), mask.begin() + M, 0);
+fill(mask.begin(), mask.end() + M - chick.size(), 0); // 동일
+
+do {
+    if (mask[i]==0) 동작
+} while (next_permutation(mask.begin(), mask.end())); 
+```
+
+```cpp
+
+```
+
+```cpp
+
+```
+
+```cpp
+
+```

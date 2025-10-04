@@ -2,15 +2,30 @@
 
 |출처|제목|유형|풀이|
 |---|---|---|---|
-|17|[조삼모사 ![Silver2][s2]](https://www.codetree.ai/ko/frequent-problems/problems/three-at-dawn-and-four-at-dusk/description)|Backtracking| 250421 |
-|17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking| 250422 |
-|18|[드래곤 커브 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/problems/dragon-curve/description)|Simulation| 250423 |
-|19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS| 250619 | 
+|25| 가로등 설치 ||[]()|
+|25| [AI 로봇청소기](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ai-robot/description) ||[25-10-04](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/_codetree/ai-robot.cpp)|
+
+|25| 해적 선장 코디 ||[]()|
+|25| 택배 하차 ||[]()|
+
+|25| 여왕 개미 ||[]()|
+|25| 미생물 연구 ||[]()|
+
+|25| 
+개구리의 여행 ||[]()|
 |25|[민트 초코 우유 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description)|Simulation, BFS| 250620 |
-|| ||[]()|
-|| ||[]()|
+
+|25| 코드트리 등산 게임 ||[]()|
+|25| 메두사와 전사들 ||[]()|
+
+|25|  ||[]()|
+|25|  ||[]()|
 
 
+|19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS| 250619 | 
+|18|[드래곤 커브 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/problems/dragon-curve/description)|Simulation| 250423 |
+|17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking| 250422 |
+|17|[조삼모사 ![Silver2][s2]](https://www.codetree.ai/ko/frequent-problems/problems/three-at-dawn-and-four-at-dusk/description)|Backtracking| 250421 |
 
 [b5]: https://img.shields.io/badge/Bronze_5-%235D3E31.svg
 [b4]: https://img.shields.io/badge/Bronze_4-%235D3E31.svg

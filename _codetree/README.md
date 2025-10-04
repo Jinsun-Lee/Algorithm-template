@@ -3,7 +3,7 @@
 |출처|제목|유형|풀이|
 |---|---|---|---|
 |25| 가로등 설치 ||[]()|
-|25| [AI 로봇청소기](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ai-robot/description) ||[25-10-04](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/_codetree/ai-robot.cpp)|
+|25| [AI 로봇청소기](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/ai-robot/description) ||[25-10-04](https://github.com/Jinsun-Lee/Algorithm-template/discussions/70)|
 
 |25| 해적 선장 코디 ||[]()|
 |25| 택배 하차 ||[]()|

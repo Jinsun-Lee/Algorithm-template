@@ -23,4 +23,4 @@
 # 
 # 
 # 
-# [세그먼트 트리](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/Z26_segmentTree/README.md)
+# [세그먼트 트리](https://github.com/Jinsun-Lee/Algorithm-template/tree/master/Z26_ETC/_segmentTree/README.md)

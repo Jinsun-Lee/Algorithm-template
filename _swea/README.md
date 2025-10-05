@@ -1,2 +1,0 @@
-- [1949. 등산로 조성](https://github.com/Jinsun-Lee/Algorithm-template/tree/master/_swea/1949.%20%5B%EB%AA%A8%EC%9D%98%20SW%20%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%5D%20%EB%93%B1%EC%82%B0%EB%A1%9C%20%EC%A1%B0%EC%84%B1)
-- 

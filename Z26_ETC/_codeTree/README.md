@@ -17,7 +17,7 @@
 |  |  ||  |
 |23| [루돌프의 반란](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/rudolph-rebellion/description) ||  |
 |---|---|---|---|
-|19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS| 25-06-19 | 
+|19|[바이러스 백신 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/vaccine-for-virus/description)|Backtracking, BFS| [25-06-19](https://github.com/Jinsun-Lee/Algorithm-template/discussions/45) | 
 |18|[드래곤 커브 ![Gold4][g4]](https://www.codetree.ai/ko/frequent-problems/problems/dragon-curve/description)|Simulation| 25-04-23 |
 |17|[연산자 배치하기 ![Silver1][s1]](https://www.codetree.ai/ko/frequent-problems/problems/arrange-operator/description)|Backtracking| 25-04-22 |
 |17|[조삼모사 ![Silver2][s2]](https://www.codetree.ai/ko/frequent-problems/problems/three-at-dawn-and-four-at-dusk/description)|Backtracking| 25-04-21 |

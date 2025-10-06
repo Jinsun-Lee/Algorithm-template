@@ -7,6 +7,8 @@
 
 <br>
 
-### 응용
+# 연관
 - [x] [2573. 빙산](https://www.acmicpc.net/problem/2573): 주변 셀에 의해 연결이 언제 끊어지는지 ([쉬움](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/D4_BFS/2573_won.cpp), [빠름](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/D4_BFS/2573_fast.cpp), [함수](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/D4_BFS/2573_func.cpp))
 - [ ] [docs] BFS 리드미 갱신
+
+# 개념

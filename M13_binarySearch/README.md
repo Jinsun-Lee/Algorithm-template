@@ -48,5 +48,10 @@
 
 ### 매개변수 탐색
 - [x] [1654. 랜선자르기](https://www.acmicpc.net/problem/1654): [답](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/5_1654_%ED%95%A8%EC%88%98.cc) 
-- [x] [1477. 휴게소 세우기](https://www.acmicpc.net/problem/1477): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-12961024)
+- [x] [2792. 보석 상자](https://www.acmicpc.net/problem/2792): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-14611416)
 - [x] [16401. 과자 나눠주기](https://www.acmicpc.net/problem/16401): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-13635307)
+
+<br>
+
+- [x] [1477. 휴게소 세우기](https://www.acmicpc.net/problem/1477): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-12961024)
+- [x] 

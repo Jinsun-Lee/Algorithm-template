@@ -14,8 +14,8 @@ int main() {
 
   int a, b;
   while (tc--) {
-      cin >> a >> b;
-      cout << psum[b] - psum[a - 1] << "\n"; 
+    cin >> a >> b;
+    cout << psum[b] - psum[a - 1] << "\n"; 
   }
   return 0;
 }

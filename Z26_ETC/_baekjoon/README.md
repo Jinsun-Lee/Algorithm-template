@@ -1,11 +1,3 @@
-### 백준 여러 번 공부할 문제 모음
-1. 북마크에서 삭제
-2. 백준 사이트에서 북마크 해제
-3. 여러 해답 확인 후 좋은 코드들 전부 저장
-4. solution에 파일 업로드
-5. 백준 레포에서 .cc 파일 삭제
-
-<br>
-
+### [디스커션](https://github.com/Jinsun-Lee/Algorithm-template/discussions/30)
 ### 목차
 - 

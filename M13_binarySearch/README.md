@@ -1,8 +1,8 @@
-# [이분탐색](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13)
+# [이분탐색](https://github.com/Jinsun-Lee/algorithm-study/discussions/13)
 
-- [x] [1920. 수 찾기](https://www.acmicpc.net/problem/1920): 개념 확인 ([함수, STL](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/1_1920_%ED%95%A8%EC%88%98_STL.md))
-- [ ] ⭐[10816. 숫자 카드 2](https://www.acmicpc.net/problem/10816): lower_bound ([함수, STL](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/2_10816_%ED%95%A8%EC%88%98_STL.md))
-- [ ] ⭐[18870. 좌표 압축](https://www.acmicpc.net/problem/18870): 개념 숙지 ([STL](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/3_18870_STL.md))
+- [x] [1920. 수 찾기](https://www.acmicpc.net/problem/1920): 개념 확인 ([함수, STL](https://github.com/Jinsun-Lee/algorithm-study/blob/master/M13_binarySearch/1_1920_%ED%95%A8%EC%88%98_STL.md))
+- [ ] ⭐[10816. 숫자 카드 2](https://www.acmicpc.net/problem/10816): lower_bound ([함수, STL](https://github.com/Jinsun-Lee/algorithm-study/blob/master/M13_binarySearch/2_10816_%ED%95%A8%EC%88%98_STL.md))
+- [ ] ⭐[18870. 좌표 압축](https://www.acmicpc.net/problem/18870): 개념 숙지 ([STL](https://github.com/Jinsun-Lee/algorithm-study/blob/master/M13_binarySearch/3_18870_STL.md))
 - [ ] ⭐⭐[2805. 나무자르기](https://www.acmicpc.net/problem/2805): 개념 숙지 → 매개변수 탐색
     ```cpp
     #include <iostream> 
@@ -47,11 +47,11 @@
 <br>
 
 ### 매개변수 탐색
-- [x] [1654. 랜선자르기](https://www.acmicpc.net/problem/1654): [답](https://github.com/Jinsun-Lee/Algorithm-template/blob/master/M13_binarySearch/5_1654_%ED%95%A8%EC%88%98.cc) 
-- [x] [2792. 보석 상자](https://www.acmicpc.net/problem/2792): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-14611416)
-- [x] [16401. 과자 나눠주기](https://www.acmicpc.net/problem/16401): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-13635307)
+- [x] [1654. 랜선자르기](https://www.acmicpc.net/problem/1654): [답](https://github.com/Jinsun-Lee/algorithm-study/blob/master/M13_binarySearch/5_1654_%ED%95%A8%EC%88%98.cc) 
+- [x] [2792. 보석 상자](https://www.acmicpc.net/problem/2792): [답](https://github.com/Jinsun-Lee/algorithm-study/discussions/13#discussioncomment-14611416)
+- [x] [16401. 과자 나눠주기](https://www.acmicpc.net/problem/16401): [답](https://github.com/Jinsun-Lee/algorithm-study/discussions/13#discussioncomment-13635307)
 
 <br>
 
-- [x] [1477. 휴게소 세우기](https://www.acmicpc.net/problem/1477): [답](https://github.com/Jinsun-Lee/Algorithm-template/discussions/13#discussioncomment-12961024)
+- [x] [1477. 휴게소 세우기](https://www.acmicpc.net/problem/1477): [답](https://github.com/Jinsun-Lee/algorithm-study/discussions/13#discussioncomment-12961024)
 - [x] 
